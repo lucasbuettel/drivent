@@ -34,10 +34,11 @@ export async function createEnrollmentWithAddress(user?: User) {
 
 export function createhAddressWithCEP() {
   return {
-    logradouro: "Avenida Brigadeiro Faria Lima",
-    complemento: "de 3252 ao fim - lado par",
     bairro: "Itaim Bibi",
     cidade: "São Paulo",
+    complemento: "de 3252 ao fim - lado par",
+    localidade: "São Paulo",
+    logradouro: "Avenida Brigadeiro Faria Lima",
     uf: "SP",
   };
 }
