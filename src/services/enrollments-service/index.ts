@@ -4,7 +4,7 @@ import addressRepository, { CreateAddressParams } from "@/repositories/address-r
 import enrollmentRepository, { CreateEnrollmentParams } from "@/repositories/enrollment-repository";
 import { exclude } from "@/utils/prisma-utils";
 import { Address, Enrollment } from "@prisma/client";
-import { ViaCEPAddress } from "@/protocols"
+import { ViaCEPAddress } from "@/protocols";
 
 async function getAddressFromCEP(cep: string): Promise<ViaCEPAddress> {
   const result = await request.get(`https://viacep.com.br/ws/${cep}/json/`);
@@ -21,7 +21,7 @@ async function getAddressFromCEP(cep: string): Promise<ViaCEPAddress> {
     bairro: result.data.bairro,
     localidade: result.data.localidade,
     uf: result.data.uf
-  }
+  };
 
   return description;
 }
